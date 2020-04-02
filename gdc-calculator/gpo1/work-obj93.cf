@@ -1,7 +1,13 @@
 v 4
-file . "register4bits.vhdl" "2512ee3b3d944fbe23833aa1c35f8a78a17a618e" "20200326015215.460":
-  entity register4bits at 1( 0) + 0 on 35;
-  architecture arch of register4bits at 12( 235) + 0 on 36;
+file . "substractor4bits_tb.vhdl" "a43b7d537b69bde90f3c0dd4eaf0781f712de667" "20200402011912.087":
+  entity substractor4bits_tb at 1( 0) + 0 on 51;
+  architecture arch of substractor4bits_tb at 7( 87) + 0 on 52;
+file . "substractor.vhdl" "71d5734c24452479e6cd4320cc8574d1a848950d" "20200402010707.690":
+  entity substractor at 1( 0) + 0 on 43;
+  architecture arch of substractor at 11( 166) + 0 on 44;
+file . "register4bits.vhdl" "fb692b1ced05e8c3b9999dcb9ceb029f58358698" "20200402001928.646":
+  entity register4bits at 1( 0) + 0 on 39;
+  architecture arch of register4bits at 12( 235) + 0 on 40;
 file . "mux_tb.vhdl" "68c5e4c2f795d77e1c53cda9f317740d57d7c6b0" "20200326004604.350":
   entity mux_tb at 1( 0) + 0 on 15;
   architecture arch of mux_tb at 7( 74) + 0 on 16;
@@ -11,9 +17,12 @@ file . "mux1bit.vhdl" "bd74c6c4cd4d1c80959cdd8c28c9572a6b8e48b6" "20200326004401
 file . "mux.vhdl" "c2c1a86270df7614a2fee58a79ea45670f5ae5b0" "20200326004552.310":
   entity mux at 1( 0) + 0 on 13;
   architecture arch of mux at 12( 212) + 0 on 14;
-file . "ffd.vhdl" "595ca71572b0b67b3c58e29211c856c87de6c09e" "20200326013947.805":
-  entity ffd at 1( 0) + 0 on 27;
-  architecture arch of ffd at 12( 176) + 0 on 28;
-file . "register_tb.vhdl" "0672cdc0b7bf61e89784e05db95e4cd379ba0c56" "20200326014242.269":
-  entity register_tb at 1( 0) + 0 on 31;
-  architecture arch of register_tb at 7( 79) + 0 on 32;
+file . "ffd.vhdl" "aa6aa360dad5eb55447b39f673d9bc44d1eb3c81" "20200402001846.962":
+  entity ffd at 1( 0) + 0 on 37;
+  architecture arch of ffd at 12( 179) + 0 on 38;
+file . "register_tb.vhdl" "0672cdc0b7bf61e89784e05db95e4cd379ba0c56" "20200402001947.518":
+  entity register_tb at 1( 0) + 0 on 41;
+  architecture arch of register_tb at 7( 79) + 0 on 42;
+file . "substractor4bits.vhdl" "623eb8fe7aa1b907fd8c40e215d09cfb87e04a9a" "20200402010725.581":
+  entity substractor4bits at 1( 0) + 0 on 45;
+  architecture arch of substractor4bits at 13( 255) + 0 on 46;

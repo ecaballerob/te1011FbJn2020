@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity ffd is
     port (
-        clk, d : in std_logic;
+        clk, ld, d: in std_logic;
         reset : in std_logic;
         q : out std_logic
     );
@@ -15,8 +15,10 @@ begin
     begin
         if (reset = '1') then
             q <= '0';
-        elsif (clk = '1' and clk'event) then
-            q <= d;
+        elsif rising_edge(clk) then
+            if ld = '1' then
+                q <= d;
+            end if;
         end if;
     end process;
     
