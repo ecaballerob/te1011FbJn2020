@@ -28,9 +28,9 @@ begin
     --             x_lt_y <= '1';
     --         end if;
     -- end process;
-
-    x_gt_y <= x > y;
-    x_eq_y <= x = y;
-    x_lt_y <= x < y;
+    
+    x_gt_y <= '1' when x > y else '0';
+    x_eq_y <= '1' when x = y else '0';
+    x_lt_y <= '1' when x < y else '0';
 
 end arch ; -- arch
