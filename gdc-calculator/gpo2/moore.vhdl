@@ -20,17 +20,7 @@ begin
     begin
     --  if timer = '1' and timer'event then
         if rising_edge(timer) then
-            case future_state is
-                when RED => present_state <= GREEN;
-                when GREEN => present_state <= YELLOW;
-                when YELLOW => present_state <= RED;
-            end case;
-        else
-            case future_state is
-                when RED => present_state <= RED;
-                when GREEN => present_state <= GREEN;
-                when YELLOW => present_state <= YELLOW;
-            end case;
+            present_state <= future_state;
         end if;
     end process;
 
@@ -39,11 +29,16 @@ begin
     process (present_state)
     begin
         case present_state is 
-            when RED => s <= "00";
-            when GREEN => s <="01";
-            when YELLOW => s <= "10";
+            when RED => 
+                s <= "00";
+                future_state <= GREEN;
+            when GREEN => 
+                s <="01";
+                future_state <= YELLOW;
+            when YELLOW => 
+                s <= "10";
+                future_state <= RED;
         end case;
-        future_state <= present_state;
     end process;
 
 end arch ; -- arch
