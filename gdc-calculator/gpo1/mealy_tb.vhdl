@@ -26,5 +26,5 @@ begin
     end process;
     
     UUT : mealy port map ( clk, tr, p);
-    tr <= '0';
+    tr <= '0', '1' after 20 ns, '0' after 40 ns;
 end arch ; -- arch
