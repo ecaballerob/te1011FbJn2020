@@ -39,7 +39,7 @@ begin
                 qn <= qn;
                 future <= S0;
             when "01" =>
-                qn <= q(3 downto 1) & sdr;
+                qn <= qn(3 downto 1) & sdr;
                 future <= S1;
             when "10" =>
                 qn <= sdl & q(2 downto 0);
