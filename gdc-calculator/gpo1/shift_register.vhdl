@@ -11,44 +11,30 @@ entity shift_register is
 end entity;
 
 architecture arch of shift_register is
-    type state_type is (S0, S1, S2, S3)
-    signal present, future : state_type;
-    signal qn : std_logic_vector(3 downto 0);
-
+    signal qn : std_logic_vector(3 downto 0) := "0000";
 begin
-    
-    q <= qn;
-
-    -- Sequencial
     process(clr, clk)
     begin
         if clr = '0' then
             qn <= "0000";
         else
             if rising_edge(clk) then
-                present <= future;
+                case mode is
+                    when "00" => 
+                        qn <= qn;
+                    when "01" =>
+                        qn <= qn(2 downto 0) & sdr;
+                    when "10" =>
+                        qn <= sdl & qn(3 downto 1);
+                    when "11" =>
+                        qn <= parallel;
+                    when others =>
+                        null;
+                end case;
+                q <= qn;
             end if;
         end if;
     end process;
-
-    --- Combinacional
-    process (mode, present)
-    begin
-        case mode is
-            when "00" => 
-                qn <= qn;
-                future <= S0;
-            when "01" =>
-                qn <= qn(3 downto 1) & sdr;
-                future <= S1;
-            when "10" =>
-                qn <= sdl & q(2 downto 0);
-                future <= S2;
-            when "11" =>
-                qn <= parallel;
-                future <= S3;
-        end case;
-    end process;
-
-
+                
+    q <= qn;
 end arch ; -- arch
