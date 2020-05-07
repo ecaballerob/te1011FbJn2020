@@ -1,0 +1,6 @@
+Inicio del test (Entrada=ABC, Salida=F)
+ABC=000F=1
+ABC=001F=0
+ABC=010F=1
+ABC=011F=0
+ABC=100F=0
