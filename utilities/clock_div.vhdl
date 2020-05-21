@@ -22,13 +22,13 @@ begin
     begin
         wait until clock_25Mhz'event and clock_25Mhz = '1';
         
-        if count_1Mhz < "11000" then
+        if count_1Mhz < "11000" then -- si mi count_1Mhz es menor que 24
             count_1Mhz <= count_1Mhz + 1;
         else 
             count_1Mhz <= "00000";
         end if;
         
-        if count_1Mhz < "01100" then
+        if count_1Mhz < "01100" then -- Si mi count_1Mhz es menor que 12
             clk_1Mhz_int <= '0';
         else
             clk_1Mhz_int <= '1';
@@ -43,7 +43,7 @@ begin
     process 
     begin
         wait until clk_1Mhz_int'event and clk_1Mhz_int = '1';
-        if count_100Khz /= "100" then
+        if count_100Khz /= "100" then -- Reviso si mi cuenta es menor que 4
             count_100Khz <= count_100Khz + 1;
         else
             count_100Khz <= "000";
