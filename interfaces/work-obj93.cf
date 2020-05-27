@@ -1,7 +1,0 @@
-v 4
-file . "keyboard.vhdl" "74fabc130ad26ccde63bc5657c9d53df5c9c039d" "20200520235719.146":
-  entity keyboard at 1( 0) + 0 on 51;
-  architecture arch of keyboard at 15( 295) + 0 on 52;
-file . "keyboard_tb.vhdl" "40eb43285c41c92080873ebc86d3aa8667fb2144" "20200520235719.049":
-  entity keyboard_tb at 1( 0) + 0 on 49;
-  architecture arch of keyboard_tb at 15( 312) + 0 on 50;
