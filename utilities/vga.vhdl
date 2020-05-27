@@ -8,7 +8,7 @@ entity vga is
         red, green, blue : in std_logic;
         clk_out : out std_logic;
         h_sync, v_sync : out std_logic;
-        rgb : out std_logic_vector(3 downto 0)
+        rgb : out std_logic_vector(2 downto 0)
     );
 end entity;
 
@@ -22,8 +22,8 @@ architecture arch of vga is
     signal v_count : unsigned(9 downto 0) := "0000000000";
 
     constant HORIZONTAL_SYNC : unsigned(9 downto 0) := "1100011111"; -- 799 
-    constant HSYNC_1 : unsigned(9 downto 0) := "1011110011"; -- 755
-    constant HSYNC_0 : unsigned(9 downto 0) := "1010010011"; -- 659
+    constant HSYNC_1 : unsigned(9 downto 0) := "1011110000"; -- 752
+    constant HSYNC_0 : unsigned(9 downto 0) := "1010010000"; -- 656
     constant ZERO : unsigned(9 downto 0) := "0000000000";
     constant ONE : unsigned(9 downto 0) := "1111111111";
 begin
@@ -56,7 +56,7 @@ begin
             v_count <= v_count + 1;
         end if;
 
-        if v_count <= "0111101110" and v_count >= "0111101101" then
+        if v_count <= "0111101100" and v_count >= "0111101010" then
             vs <= '0';
         else
             vs <= '1';
