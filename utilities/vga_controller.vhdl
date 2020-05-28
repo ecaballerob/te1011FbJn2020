@@ -49,7 +49,7 @@ begin
             h_count <= 0;
             
             if v_count < v_period - 1 then
-                v_count <= 0;
+                v_count <= v_count + 1;
             else
                 v_count <= 0;
             end if;
